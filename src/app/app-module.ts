@@ -7,9 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Importamos las nuevas funciones de configuración HTTP
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-
 // Importamos el nuevo interceptor funcional
 import { AuthInterceptor } from './interceptors/auth-interceptor';
+// Importamos FormsModule para el manejo de formularios en LoginComponent
+import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -25,7 +26,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
