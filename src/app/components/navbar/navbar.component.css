@@ -1,0 +1,9 @@
+.user-menu-wrapper {
+position: relative;
+}
+.dropdown-menu {
+display: none;
+}
+.dropdown-menu.show {
+display: block;
+}

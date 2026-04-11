@@ -10,11 +10,16 @@
             3ZnPg==" />
             {{ title }}
         </a>
-        <div class="navbar-text pull-right">
+        <div class="navbar-text pull-right d-flex align-items-center gap-2">
             {{ displayName }}
-            <button class="btn btn-light">
-                <i class="fa fa-user"></i>
-            </button>
+            <div class="user-menu-wrapper">
+                <button class="btn btn-light" (click)="toggleMenu()">
+                    <i class="fa fa-user"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="menuOpen">
+                    <a class="dropdown-item" (click)="logout()">Cerrar sesión</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

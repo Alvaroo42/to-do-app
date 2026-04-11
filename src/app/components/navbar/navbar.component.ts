@@ -11,9 +11,10 @@ import { UserService } from "../../services/user.service";
 export class NavbarComponent implements OnInit {
   title = 'toDoApp para SD';
   displayName = '';
+  menuOpen = false;
 
   constructor(public userService: UserService, public router: Router) { }
-  
+
   ngOnInit(): void {
     console.log('ngOnInit: navbar');
     this.userService.getUser().subscribe({
@@ -27,5 +28,14 @@ export class NavbarComponent implements OnInit {
         console.log(err);
       }
     });
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+  
+  logout(): void {
+    this.menuOpen = false;
+    this.userService.signOut();
   }
 }
